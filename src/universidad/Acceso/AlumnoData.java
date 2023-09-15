@@ -52,7 +52,7 @@ public class AlumnoData {
     }
   
     public void modificarAlumno(Alumnos alumno){
-        String sql = "UPDATE alumno SET dni = ? , apellido = ?, nombre = ?, fechaNacimiento = ? WHERE idAlumno = ?";
+        String sql = "UPDATE alumno SET dni = ? , apellido = ?, nombre = ?, fechaNac = ? WHERE idAlumno = ?";
         PreparedStatement ps = null;
           try {
                ps = con.prepareStatement(sql);
@@ -92,7 +92,7 @@ public class AlumnoData {
     }
     public Alumnos buscarAlumno(int id) {
         Alumnos alumno = null;
-        String sql = "SELECT dni, apellido, nombre, fechaNacimiento FROM alumno WHERE idAlumno = ? AND estado = 1";
+        String sql = "SELECT dni, apellido, nombre, fechaNac FROM alumno WHERE idAlumno = ? AND estado = 1";
         PreparedStatement ps = null;
         try {
             ps = con.prepareStatement(sql);
@@ -105,7 +105,7 @@ public class AlumnoData {
                 alumno.setDni(rs.getInt("dni"));
                 alumno.setApellido(rs.getString("apellido"));
                 alumno.setNombre(rs.getString("nombre"));
-                alumno.setFecha(rs.getDate("fechaNacimiento").toLocalDate());
+                alumno.setFecha(rs.getDate("fechaNac").toLocalDate());
                 alumno.setEstado(true);
             }
             else {
@@ -120,7 +120,7 @@ public class AlumnoData {
     }
     public Alumnos buscarAlumnoPorDni(int dni) {
         Alumnos alumno = null;
-        String sql = "SELECT idAlumno, dni, apellido, nombre, fechaNacimiento FROM alumno WHERE dni=? AND estado = 1";
+        String sql = "SELECT idAlumno, dni, apellido, nombre, fechaNac FROM alumno WHERE dni=? AND estado = 1";
         PreparedStatement ps = null;
         try {
             ps = con.prepareStatement(sql);
@@ -133,7 +133,7 @@ public class AlumnoData {
                 alumno.setDni(rs.getInt("dni"));
                 alumno.setApellido(rs.getString("apellido"));
                 alumno.setNombre(rs.getString("nombre"));
-                alumno.setFecha(rs.getDate("fechaNacimiento").toLocalDate());
+                alumno.setFecha(rs.getDate("fechaNac").toLocalDate());
                 alumno.setEstado(true);
             }
             else {
@@ -157,7 +157,7 @@ public class AlumnoData {
                 alumno.setDni(rs.getInt("dni"));
                 alumno.setApellido(rs.getString("apellido"));
                 alumno.setNombre(rs.getString("nombre"));
-                alumno.setFecha(rs.getDate("fechaNacimiento").toLocalDate());
+                alumno.setFecha(rs.getDate("fechaNac").toLocalDate());
                 alumno.setEstado(rs.getBoolean("estado"));
                 alumnos.add(alumno);
             }
