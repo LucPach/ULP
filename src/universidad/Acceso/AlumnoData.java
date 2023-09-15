@@ -26,7 +26,32 @@ public class AlumnoData {
     }
     
     
-    public void guardarAlumno(Alumnos alumno){
+   public void guardarAlumno(Alumnos alumno){
+        String sql="INSERT INTO alumno(dni, apellido, nombre, fechaNac, estado)"
+                + "VALUES(?,?,?,?,?,)";
+        
+        try {
+            PreparedStatement ps=con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+            ps.setInt(1,alumno.getDni());
+            ps.setString(2,alumno.getApellido());
+            ps.setString(3,alumno.getNombre());
+            ps.setDate(4,Date.valueOf(alumno.getFecha()));
+            ps.setBoolean(5,alumno.isEstado());
+            ps.executeUpdate();
+            ResultSet rs=ps.getGeneratedKeys();
+            if (rs.next()){
+                alumno.setIdAlumno(rs.getInt(1));
+                JOptionPane.showMessageDialog(null,"Alumno guardado exitosamente");
+            }
+            ps.close();
+            
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Error al acceder a la tabla alumno"); 
+        }
+    }
+  
+    public void modificarAlumno(Alumnos alumno){
         String sql = "UPDATE alumno SET dni = ? , apellido = ?, nombre = ?, fechaNacimiento = ? WHERE idAlumno = ?";
         PreparedStatement ps = null;
           try {
@@ -47,6 +72,7 @@ public class AlumnoData {
                 JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Alumno "+ex.getMessage());
                }
     }
+  
     public void eliminarAlumno(int id) {
         
         try {
