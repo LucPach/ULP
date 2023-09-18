@@ -12,7 +12,7 @@ import universidad.Entidades.Materias;
 
 public class InscripciónData {
     private Connection con=null;
-    private Materias md=new Materias();
+    private MateriaData md=new MateriaData();
     private AlumnoData ad=new AlumnoData();
     
     
