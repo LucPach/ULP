@@ -9,10 +9,13 @@
             <Property name="text" type="java.lang.String" value="Alumno"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+            <MenuItem class="javax.swing.JMenuItem" name="jFormAlumnos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Formulario de Alumno"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormAlumnosActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -21,10 +24,13 @@
             <Property name="text" type="java.lang.String" value="Materia"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+            <MenuItem class="javax.swing.JMenuItem" name="jFormMaterias">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Formulario de Materia"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormMateriasActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -33,15 +39,21 @@
             <Property name="text" type="java.lang.String" value="Administraci&#xf3;n"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
+            <MenuItem class="javax.swing.JMenuItem" name="jFromInscripciones">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Manejo de Inscripciones"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFromInscripcionesActionPerformed"/>
+              </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
+            <MenuItem class="javax.swing.JMenuItem" name="jFormNotas">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Manipulaci&#xf3;n de Notas"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormNotasActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -50,17 +62,23 @@
             <Property name="text" type="java.lang.String" value="Consultas"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem5">
+            <MenuItem class="javax.swing.JMenuItem" name="jFormAlumxMat">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Alumnos por Materia"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormAlumxMatActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu5">
+        <Menu class="javax.swing.JMenu" name="jSalir_menuprincipal">
           <Properties>
             <Property name="text" type="java.lang.String" value="Salir"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jSalir_menuprincipalMouseClicked"/>
+          </Events>
         </Menu>
       </SubComponents>
     </Menu>
@@ -88,17 +106,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jDesktopPane1" alignment="0" max="32767" attributes="0"/>
+          <Component id="escritorio" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jDesktopPane1" alignment="1" max="32767" attributes="0"/>
+          <Component id="escritorio" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JDesktopPane" name="jDesktopPane1">
+    <Container class="javax.swing.JDesktopPane" name="escritorio">
 
       <Layout>
         <DimensionLayout dim="0">
