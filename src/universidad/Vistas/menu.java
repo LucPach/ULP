@@ -183,7 +183,7 @@ public class menu extends javax.swing.JFrame {
 
     private void jSalir_menuprincipalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSalir_menuprincipalMouseClicked
        
-       
+       System.exit(0);
         
     }//GEN-LAST:event_jSalir_menuprincipalMouseClicked
 

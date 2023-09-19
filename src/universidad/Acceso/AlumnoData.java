@@ -29,7 +29,7 @@ public class AlumnoData {
     @SuppressWarnings("ConvertToTryWithResources")
    public void guardarAlumno(Alumnos alumno){
         String sql="INSERT INTO alumno(dni, apellido, nombre, fechaNac, estado)"
-                + "VALUES(?,?,?,?,?,)";
+                + "VALUES(?,?,?,?,?)";
         
         try {
             PreparedStatement ps=con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
@@ -48,7 +48,7 @@ public class AlumnoData {
             
             
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null,"Error al acceder a la tabla alumno"); 
+            JOptionPane.showMessageDialog(null,"Alumno ya existente"); 
         }
     }
   
