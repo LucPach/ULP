@@ -38,14 +38,9 @@
                                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="jButton4" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jButton5" min="-2" pref="75" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jDateChooser2" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jButton5" min="-2" pref="75" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -96,10 +91,7 @@
                   <Component id="jRadioButton1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                  <Component id="jDateChooser2" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -107,7 +99,7 @@
                   <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButton5" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="0" pref="23" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="27" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -211,8 +203,6 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Salir"/>
       </Properties>
-    </Component>
-    <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser2">
     </Component>
   </SubComponents>
 </Form>
