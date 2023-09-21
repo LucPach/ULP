@@ -5,6 +5,11 @@
  */
 package universidad.Vistas;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import universidad.Acceso.MateriaData;
+import universidad.Entidades.Materias;
+
 /**
  *
  * @author Exon
@@ -32,15 +37,15 @@ public class Materia extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
+        jTextCodigo = new javax.swing.JTextField();
+        jTextNombre = new javax.swing.JTextField();
+        jEstado = new javax.swing.JRadioButton();
+        jBuscar_mat = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jGuardar = new javax.swing.JButton();
         jSalir_materia = new javax.swing.JButton();
+        jTextAño = new javax.swing.JTextField();
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setText("Materia");
@@ -57,14 +62,19 @@ public class Materia extends javax.swing.JInternalFrame {
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel5.setText("Estado");
 
-        jTextField1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jTextCodigo.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
-        jTextField2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jTextNombre.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
-        jRadioButton1.setText("jRadioButton1");
+        jEstado.setText("jRadioButton1");
 
-        jButton1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButton1.setText("Buscar");
+        jBuscar_mat.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jBuscar_mat.setText("Buscar");
+        jBuscar_mat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBuscar_matActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jButton2.setText("Nuevo");
@@ -72,8 +82,13 @@ public class Materia extends javax.swing.JInternalFrame {
         jButton3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jButton3.setText("Eliminar");
 
-        jButton4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButton4.setText("Guadar");
+        jGuardar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jGuardar.setText("Guadar");
+        jGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jGuardarActionPerformed(evt);
+            }
+        });
 
         jSalir_materia.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jSalir_materia.setText("Salir");
@@ -95,30 +110,30 @@ public class Materia extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton3)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4)
+                        .addComponent(jGuardar)
                         .addGap(18, 18, 18)
                         .addComponent(jSalir_materia)
                         .addGap(0, 33, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField2))
+                                .addComponent(jTextNombre))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(29, 29, 29)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jTextCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel5))
                                 .addGap(35, 35, 35)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                    .addComponent(jRadioButton1))))
+                                    .addComponent(jEstado)
+                                    .addComponent(jTextAño, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
+                        .addComponent(jBuscar_mat)
                         .addGap(21, 21, 21))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -132,25 +147,25 @@ public class Materia extends javax.swing.JInternalFrame {
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(jTextCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBuscar_mat))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jTextAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jRadioButton1))
+                    .addComponent(jEstado))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton3)
-                    .addComponent(jButton4)
+                    .addComponent(jGuardar)
                     .addComponent(jSalir_materia))
                 .addGap(44, 44, 44))
         );
@@ -162,21 +177,50 @@ public class Materia extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_jSalir_materiaActionPerformed
 
+    private void jGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jGuardarActionPerformed
+
+        
+        String nombre=jTextNombre.getText();
+       int fecha=Integer.parseInt(jTextAño.getText());
+       boolean estado=jEstado.isSelected();
+        
+        Materias mat=new Materias(nombre,fecha,estado);
+        MateriaData md=new MateriaData();
+        md.guardarMateria(mat);
+        
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jGuardarActionPerformed
+
+    private void jBuscar_matActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBuscar_matActionPerformed
+      
+        
+        int xx=Integer.parseInt(jTextCodigo.getText());
+        MateriaData yy= new MateriaData();
+        Materias zz= yy.buscarMateria(xx);
+         if(zz!=null){
+        jTextNombre.setText(zz.getNombre());
+        jTextAño.setText(Integer.toString(zz.getAnio()));
+        jEstado.setSelected(zz.isEstado());
+         }
+       
+    }//GEN-LAST:event_jBuscar_matActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jBuscar_mat;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private javax.swing.JRadioButton jEstado;
+    private javax.swing.JButton jGuardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JButton jSalir_materia;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextAño;
+    private javax.swing.JTextField jTextCodigo;
+    private javax.swing.JTextField jTextNombre;
     // End of variables declaration//GEN-END:variables
 }
