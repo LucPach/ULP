@@ -5,8 +5,10 @@
  */
 package universidad.Vistas;
 
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import javax.swing.JOptionPane;
 import universidad.Acceso.MateriaData;
 import universidad.Entidades.Materias;
 
@@ -41,11 +43,12 @@ public class Materia extends javax.swing.JInternalFrame {
         jTextNombre = new javax.swing.JTextField();
         jEstado = new javax.swing.JRadioButton();
         jBuscar_mat = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jNuevo = new javax.swing.JButton();
+        jEliminar = new javax.swing.JButton();
         jGuardar = new javax.swing.JButton();
         jSalir_materia = new javax.swing.JButton();
         jTextAño = new javax.swing.JTextField();
+        jModificar = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setText("Materia");
@@ -76,11 +79,21 @@ public class Materia extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButton2.setText("Nuevo");
+        jNuevo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jNuevo.setText("Nuevo");
+        jNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jNuevoActionPerformed(evt);
+            }
+        });
 
-        jButton3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButton3.setText("Eliminar");
+        jEliminar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jEliminar.setText("Eliminar");
+        jEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jEliminarActionPerformed(evt);
+            }
+        });
 
         jGuardar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jGuardar.setText("Guadar");
@@ -98,6 +111,14 @@ public class Materia extends javax.swing.JInternalFrame {
             }
         });
 
+        jModificar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jModificar.setText("Modificar");
+        jModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jModificarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -106,20 +127,11 @@ public class Materia extends javax.swing.JInternalFrame {
                 .addGap(56, 56, 56)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jGuardar)
-                        .addGap(18, 18, 18)
-                        .addComponent(jSalir_materia)
-                        .addGap(0, 33, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextNombre))
+                                .addComponent(jTextNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(29, 29, 29)
@@ -133,12 +145,23 @@ public class Materia extends javax.swing.JInternalFrame {
                                     .addComponent(jEstado)
                                     .addComponent(jTextAño, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jBuscar_mat)
-                        .addGap(21, 21, 21))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jBuscar_mat, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jSalir_materia, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(21, 34, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jNuevo)
+                        .addGap(18, 18, 18)
+                        .addComponent(jGuardar)
+                        .addGap(26, 26, 26)
+                        .addComponent(jModificar)
+                        .addGap(18, 18, 18)
+                        .addComponent(jEliminar)
+                        .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(193, 193, 193))
+                .addGap(223, 223, 223))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,17 +180,18 @@ public class Materia extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jTextAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
+                .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jEstado))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jGuardar)
+                    .addComponent(jEstado)
                     .addComponent(jSalir_materia))
-                .addGap(44, 44, 44))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jNuevo)
+                    .addComponent(jGuardar)
+                    .addComponent(jModificar)
+                    .addComponent(jEliminar))
+                .addGap(26, 26, 26))
         );
 
         pack();
@@ -186,7 +210,12 @@ public class Materia extends javax.swing.JInternalFrame {
         
         Materias mat=new Materias(nombre,fecha,estado);
         MateriaData md=new MateriaData();
+        
+     
         md.guardarMateria(mat);
+              
+        
+        
         
         
         // TODO add your handling code here:
@@ -206,11 +235,40 @@ public class Materia extends javax.swing.JInternalFrame {
        
     }//GEN-LAST:event_jBuscar_matActionPerformed
 
+    private void jNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNuevoActionPerformed
+        
+        jTextCodigo.setText("");
+        jTextNombre.setText("");
+        
+        
+    }//GEN-LAST:event_jNuevoActionPerformed
+
+    private void jEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jEliminarActionPerformed
+        
+        int codID=Integer.parseInt(jTextCodigo.getText());
+        MateriaData matd=new MateriaData();
+        matd.eliminarMateria(codID);
+        
+    }//GEN-LAST:event_jEliminarActionPerformed
+
+    private void jModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jModificarActionPerformed
+       
+        int codID=Integer.parseInt(jTextCodigo.getText());
+        String nom=jTextNombre.getText();
+        int fecha=Integer.parseInt(jTextAño.getText());
+        boolean estado=jEstado.isSelected();
+        MateriaData matd=new MateriaData();
+         Materias mat=new Materias(codID,nom,fecha,estado);
+        
+         matd.modificarMateria(mat, estado);
+         
+        
+    }//GEN-LAST:event_jModificarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBuscar_mat;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jEliminar;
     private javax.swing.JRadioButton jEstado;
     private javax.swing.JButton jGuardar;
     private javax.swing.JLabel jLabel1;
@@ -218,6 +276,8 @@ public class Materia extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton jModificar;
+    private javax.swing.JButton jNuevo;
     private javax.swing.JButton jSalir_materia;
     private javax.swing.JTextField jTextAño;
     private javax.swing.JTextField jTextCodigo;

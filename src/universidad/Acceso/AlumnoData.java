@@ -52,17 +52,21 @@ public class AlumnoData {
         }
     }
   
-    public void modificarAlumno(Alumnos alumno){
-        String sql = "UPDATE alumno SET dni = ? , apellido = ?, nombre = ?, fechaNac = ? WHERE idAlumno = ?";
+    public void modificarAlumno(Alumnos alumno,boolean b){
+        String sql = "UPDATE alumno SET dni = ? , apellido = ?, nombre = ?, fechaNac = ?,estado=? WHERE idAlumno = ?";
         @SuppressWarnings("UnusedAssignment")
-        PreparedStatement ps = null;
-          try {
+       PreparedStatement ps = null;
+          try{
+              
                ps = con.prepareStatement(sql);
                ps.setInt(1, alumno.getDni());
                ps.setString(2, alumno.getApellido());
                ps.setString(3, alumno.getNombre());
                ps.setDate(4, Date.valueOf(alumno.getFecha()));
-               ps.setInt(5, alumno.getIdAlumno());
+               ps.setBoolean(5, b);
+               
+               ps.setInt(6, alumno.getIdAlumno());
+               
                int exito = ps.executeUpdate();
                if (exito == 1) {
                    JOptionPane.showMessageDialog(null, "Modificado Exitosamente.");
@@ -95,7 +99,7 @@ public class AlumnoData {
     }
     public Alumnos buscarAlumno(int id) {
         Alumnos alumno = null;
-        String sql = "SELECT dni, apellido, nombre, fechaNac FROM alumno WHERE idAlumno = ? AND estado = 1";
+        String sql = "SELECT dni, apellido, nombre, fechaNac FROM alumno WHERE idAlumno = ?";
         @SuppressWarnings("UnusedAssignment")
         PreparedStatement ps = null;
         try {
@@ -111,6 +115,7 @@ public class AlumnoData {
                 alumno.setNombre(rs.getString("nombre"));
                 alumno.setFecha(rs.getDate("fechaNac").toLocalDate());
                 alumno.setEstado(true);
+                
             }
             else {
                 JOptionPane.showMessageDialog(null, "No existe el alumno");
@@ -124,7 +129,7 @@ public class AlumnoData {
     }
     public Alumnos buscarAlumnoPorDni(int dni) {
         Alumnos alumno = null;
-        String sql = "SELECT idAlumno, dni, apellido, nombre, fechaNac FROM alumno WHERE dni=? AND estado = 1";
+        String sql = "SELECT idAlumno, dni, apellido, nombre, fechaNac,estado FROM alumno WHERE dni=?";
         @SuppressWarnings("UnusedAssignment")
         PreparedStatement ps = null;
         try {
@@ -139,7 +144,10 @@ public class AlumnoData {
                 alumno.setApellido(rs.getString("apellido"));
                 alumno.setNombre(rs.getString("nombre"));
                 alumno.setFecha(rs.getDate("fechaNac").toLocalDate());
-                alumno.setEstado(true);
+                  int a=rs.getInt("estado");
+                    if(a==1){
+                    alumno.setEstado(true);
+                    }else if(a==0){alumno.setEstado(false);}
             }
             else {
                 JOptionPane.showMessageDialog(null, "No existe el alumno");

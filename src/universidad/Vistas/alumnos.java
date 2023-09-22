@@ -244,6 +244,7 @@ public class alumnos extends javax.swing.JInternalFrame {
 
     private void jBuscarALumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBuscarALumnoActionPerformed
       
+        
         int dni=Integer.parseInt(jTextDni.getText());
          AlumnoData ad= new AlumnoData();
         
@@ -254,10 +255,16 @@ public class alumnos extends javax.swing.JInternalFrame {
         jTextNombre.setText(al.getNombre());
         jEstado.setSelected(al.isEstado());
         jDate.setDate(Date.valueOf(al.getFecha()));
-        
-        
-        
         }
+       
+               
+                
+                               
+                        
+                        
+        
+        
+        
         
     }//GEN-LAST:event_jBuscarALumnoActionPerformed
 
@@ -282,9 +289,9 @@ public class alumnos extends javax.swing.JInternalFrame {
     }
     private void jNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNuevoActionPerformed
      
-        jTextDni.setText(" ");
-        jTextApellido.setText(" ");
-        jTextNombre.setText(" ");
+        jTextDni.setText("");
+        jTextApellido.setText("");
+        jTextNombre.setText("");
         jEstado.setSelected(false);  
         jDate.setDate(Date.valueOf(LocalDate.now()));
         
@@ -302,10 +309,13 @@ public class alumnos extends javax.swing.JInternalFrame {
        boolean estado=jEstado.isSelected();
        LocalDate fecha=jDate.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
        
-       Alumnos al1= new Alumnos(dni,apellido,nombre,fecha,estado);
+       Alumnos al1= new Alumnos();
        AlumnoData ad= new AlumnoData();
        
-       ad.modificarAlumno(al1);
+       al1=ad.buscarAlumno(al1.getIdAlumno());
+       
+       
+       ad.modificarAlumno(al1,estado);
         
     }//GEN-LAST:event_jModificarActionPerformed
     

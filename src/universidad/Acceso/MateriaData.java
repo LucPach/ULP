@@ -43,13 +43,14 @@ public class MateriaData {
         
     }
     
-    public void modificarMateria(Materias materia){
-        String sql= "UPDATE materia SET nombre=?, año=? WHERE idMateria=?";
+    public void modificarMateria(Materias materia, boolean b){
+        String sql= "UPDATE materia SET nombre=?, año=?, estado=? WHERE idMateria=?";
         try {
             PreparedStatement ps=con.prepareStatement(sql);
             ps.setString(1,materia.getNombre());
             ps.setInt(2,materia.getAnio());
-            ps.setInt(3,materia.getIdMateria());
+            ps.setInt(4,materia.getIdMateria());
+            ps.setBoolean(3,b);
             int exito= ps.executeUpdate();
             if (exito == 1){
                 JOptionPane.showMessageDialog(null,"Materia modificada correctamente");
@@ -83,7 +84,7 @@ public class MateriaData {
     
     public Materias buscarMateria(int id){
         
-        String sql= "SELECT nombre,año FROM materia WHERE idMateria=? AND estado=1";
+        String sql= "SELECT nombre,año,estado FROM materia WHERE idMateria=?";
         Materias materia= null;
         try {
             try (PreparedStatement ps = con.prepareStatement(sql)) {
@@ -94,7 +95,11 @@ public class MateriaData {
                     materia.setIdMateria(id);
                     materia.setNombre(rs.getString("nombre"));
                     materia.setAnio(rs.getInt("año"));
+                    int a=rs.getInt("estado");
+                    if(a==1){
                     materia.setEstado(true);
+                    }else if(a==0){materia.setEstado(false);}
+                    
                 }else {JOptionPane.showMessageDialog(null,"No Existe la materia");
                 
                 }
