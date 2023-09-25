@@ -52,7 +52,7 @@ public class AlumnoData {
         }
     }
   
-    public void modificarAlumno(Alumnos alumno,boolean b){
+    public void modificarAlumno(Alumnos alumno){
         String sql = "UPDATE alumno SET dni = ? , apellido = ?, nombre = ?, fechaNac = ?,estado=? WHERE idAlumno = ?";
         @SuppressWarnings("UnusedAssignment")
        PreparedStatement ps = null;
@@ -63,7 +63,7 @@ public class AlumnoData {
                ps.setString(2, alumno.getApellido());
                ps.setString(3, alumno.getNombre());
                ps.setDate(4, Date.valueOf(alumno.getFecha()));
-               ps.setBoolean(5, b);
+               ps.setBoolean(5, alumno.isEstado());
                
                ps.setInt(6, alumno.getIdAlumno());
                

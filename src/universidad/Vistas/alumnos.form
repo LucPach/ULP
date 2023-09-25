@@ -22,47 +22,50 @@
           <Group type="102" attributes="0">
               <EmptySpace pref="36" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" pref="116" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel2" alignment="0" min="-2" pref="112" max="-2" attributes="0"/>
-                                  <Component id="jLabel3" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
-                                  <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jEstado" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextNombre" min="-2" pref="154" max="-2" attributes="0"/>
-                                  <Component id="jTextApellido" min="-2" pref="154" max="-2" attributes="0"/>
-                                  <Component id="jTextDni" min="-2" pref="154" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jNuevo" min="-2" max="-2" attributes="0"/>
-                          <Component id="jGuardar_alumnos" min="-2" max="-2" attributes="0"/>
-                          <Component id="jModificar" min="-2" max="-2" attributes="0"/>
-                          <Component id="jBuscarALumno" min="-2" max="-2" attributes="0"/>
-                          <Component id="jEliminar" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="116" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jDate" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jSalir_alumnos" min="-2" pref="83" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel2" alignment="0" min="-2" pref="112" max="-2" attributes="0"/>
+                          <Component id="jLabel3" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
+                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jEstado" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="jLabelID" min="-2" pref="80" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jTextNombre" min="-2" pref="154" max="-2" attributes="0"/>
+                          <Component id="jTextApellido" min="-2" pref="154" max="-2" attributes="0"/>
+                          <Component id="jTextDni" min="-2" pref="154" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
+              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jNuevo" min="-2" max="-2" attributes="0"/>
+                  <Component id="jGuardar_alumnos" min="-2" max="-2" attributes="0"/>
+                  <Component id="jModificar" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBuscarALumno" min="-2" max="-2" attributes="0"/>
+                  <Component id="jEliminar" min="-2" max="-2" attributes="0"/>
+              </Group>
           </Group>
-          <Component id="jLabelBaner" alignment="0" pref="0" max="32767" attributes="0"/>
+          <Component id="jLabelBaner" alignment="1" pref="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jDate" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jSalir_alumnos" min="-2" pref="83" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -77,7 +80,7 @@
                           <Component id="jTextDni" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jBuscarALumno" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -101,11 +104,19 @@
                                   <Component id="jModificar" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jTextNombre" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jEliminar" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jEliminar" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jLabelID" min="-2" pref="26" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           <Component id="jDate" min="-2" max="-2" attributes="0"/>
@@ -113,7 +124,7 @@
                   </Group>
                   <Component id="jSalir_alumnos" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Component id="jLabelBaner" pref="119" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -293,6 +304,13 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jModificarActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelID">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="18" style="1"/>
+        </Property>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
