@@ -5,8 +5,9 @@
  */
 package universidad.Vistas;
 
-import universidad.Acceso.AlumnoData;
-import universidad.Entidades.Alumnos;
+import java.util.ArrayList;
+import universidad.Acceso.*;
+import universidad.Entidades.*;
 
 
 /**
@@ -15,11 +16,15 @@ import universidad.Entidades.Alumnos;
  */
 public class Inscripciones extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form Inscripciones
-     */
+        ArrayList<Alumnos>alist=new ArrayList<>();
+        AlumnoData aldat= new AlumnoData();
+        
     public Inscripciones() {
         initComponents();
+       
+        this.alist=(ArrayList<Alumnos>) aldat.listarAlumnos();
+        cargarCombo(alist);
+        
     }
 
     /**
@@ -177,11 +182,18 @@ public class Inscripciones extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jSalir_inscActionPerformed
 
     private void jComboAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboAlumnosActionPerformed
-        AlumnoData aldat= new AlumnoData();
-        aldat.listarAlumnos();
+       
         
     }//GEN-LAST:event_jComboAlumnosActionPerformed
-
+    public void cargarCombo(ArrayList a){
+     foreach(ArrayList nuevalist:a){
+    
+    
+    
+    }
+    
+    
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
