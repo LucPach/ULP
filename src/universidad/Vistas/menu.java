@@ -28,6 +28,7 @@ public class menu extends javax.swing.JFrame {
     private void initComponents() {
 
         escritorio = new javax.swing.JDesktopPane();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jFormAlumnos = new javax.swing.JMenuItem();
@@ -42,19 +43,39 @@ public class menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/Vistas/banerulp.png"))); // NOI18N
+
+        escritorio.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 650, Short.MAX_VALUE)
+            .addGroup(escritorioLayout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 501, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, escritorioLayout.createSequentialGroup()
+                .addGap(0, 450, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jMenu1.setText("Alumno");
+        jMenuBar1.setBackground(new java.awt.Color(255, 153, 0));
+        jMenuBar1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 153, 0)));
+        jMenuBar1.setForeground(new java.awt.Color(255, 255, 255));
+        jMenuBar1.setFocusable(false);
+        jMenuBar1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
 
+        jMenu1.setBackground(new java.awt.Color(255, 153, 0));
+        jMenu1.setForeground(new java.awt.Color(255, 255, 255));
+        jMenu1.setText("Alumno");
+        jMenu1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+
+        jFormAlumnos.setBackground(new java.awt.Color(255, 153, 0));
+        jFormAlumnos.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jFormAlumnos.setForeground(new java.awt.Color(255, 255, 255));
         jFormAlumnos.setText("Formulario de Alumno");
         jFormAlumnos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,8 +86,14 @@ public class menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        jMenu2.setBackground(new java.awt.Color(255, 153, 0));
+        jMenu2.setForeground(new java.awt.Color(255, 255, 255));
         jMenu2.setText("Materia");
+        jMenu2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
 
+        jFormMaterias.setBackground(new java.awt.Color(255, 153, 0));
+        jFormMaterias.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jFormMaterias.setForeground(new java.awt.Color(255, 255, 255));
         jFormMaterias.setText("Formulario de Materia");
         jFormMaterias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,8 +104,14 @@ public class menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
+        jMenu3.setBackground(new java.awt.Color(255, 153, 0));
+        jMenu3.setForeground(new java.awt.Color(255, 255, 255));
         jMenu3.setText("Administración");
+        jMenu3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
 
+        jFromInscripciones.setBackground(new java.awt.Color(255, 153, 0));
+        jFromInscripciones.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jFromInscripciones.setForeground(new java.awt.Color(255, 255, 255));
         jFromInscripciones.setText("Manejo de Inscripciones");
         jFromInscripciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,6 +120,9 @@ public class menu extends javax.swing.JFrame {
         });
         jMenu3.add(jFromInscripciones);
 
+        jFormNotas.setBackground(new java.awt.Color(255, 153, 0));
+        jFormNotas.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jFormNotas.setForeground(new java.awt.Color(255, 255, 255));
         jFormNotas.setText("Manipulación de Notas");
         jFormNotas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,8 +133,14 @@ public class menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
+        jMenu4.setBackground(new java.awt.Color(255, 153, 0));
+        jMenu4.setForeground(new java.awt.Color(255, 255, 255));
         jMenu4.setText("Consultas");
+        jMenu4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
 
+        jFormAlumxMat.setBackground(new java.awt.Color(255, 153, 0));
+        jFormAlumxMat.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jFormAlumxMat.setForeground(new java.awt.Color(255, 255, 255));
         jFormAlumxMat.setText("Alumnos por Materia");
         jFormAlumxMat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,7 +151,10 @@ public class menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
+        jSalir_menuprincipal.setBackground(new java.awt.Color(255, 153, 0));
+        jSalir_menuprincipal.setForeground(new java.awt.Color(255, 255, 255));
         jSalir_menuprincipal.setText("Salir");
+        jSalir_menuprincipal.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jSalir_menuprincipal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jSalir_menuprincipalMouseClicked(evt);
@@ -227,6 +272,7 @@ public static void NimbusLookAndFeel() {
     private javax.swing.JMenuItem jFormMaterias;
     private javax.swing.JMenuItem jFormNotas;
     private javax.swing.JMenuItem jFromInscripciones;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;

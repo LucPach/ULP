@@ -49,6 +49,7 @@ public class Materia extends javax.swing.JInternalFrame {
         jSalir_materia = new javax.swing.JButton();
         jTextAño = new javax.swing.JTextField();
         jModificar = new javax.swing.JButton();
+        jLabelBaner = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setText("Materia");
@@ -69,17 +70,20 @@ public class Materia extends javax.swing.JInternalFrame {
 
         jTextNombre.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
-        jEstado.setText("jRadioButton1");
-
-        jBuscar_mat.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jBuscar_mat.setBackground(new java.awt.Color(255, 153, 0));
+        jBuscar_mat.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jBuscar_mat.setForeground(new java.awt.Color(255, 255, 255));
         jBuscar_mat.setText("Buscar");
+        jBuscar_mat.setName(""); // NOI18N
         jBuscar_mat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBuscar_matActionPerformed(evt);
             }
         });
 
-        jNuevo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jNuevo.setBackground(new java.awt.Color(255, 153, 0));
+        jNuevo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jNuevo.setForeground(new java.awt.Color(255, 255, 255));
         jNuevo.setText("Nuevo");
         jNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,7 +91,9 @@ public class Materia extends javax.swing.JInternalFrame {
             }
         });
 
-        jEliminar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jEliminar.setBackground(new java.awt.Color(255, 153, 0));
+        jEliminar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jEliminar.setForeground(new java.awt.Color(255, 255, 255));
         jEliminar.setText("Eliminar");
         jEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,7 +101,9 @@ public class Materia extends javax.swing.JInternalFrame {
             }
         });
 
-        jGuardar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jGuardar.setBackground(new java.awt.Color(255, 153, 0));
+        jGuardar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jGuardar.setForeground(new java.awt.Color(255, 255, 255));
         jGuardar.setText("Guadar");
         jGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,7 +111,9 @@ public class Materia extends javax.swing.JInternalFrame {
             }
         });
 
+        jSalir_materia.setBackground(new java.awt.Color(255, 153, 0));
         jSalir_materia.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jSalir_materia.setForeground(new java.awt.Color(255, 255, 255));
         jSalir_materia.setText("Salir");
         jSalir_materia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,7 +121,9 @@ public class Materia extends javax.swing.JInternalFrame {
             }
         });
 
-        jModificar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jModificar.setBackground(new java.awt.Color(255, 153, 0));
+        jModificar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jModificar.setForeground(new java.awt.Color(255, 255, 255));
         jModificar.setText("Modificar");
         jModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,79 +131,84 @@ public class Materia extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabelBaner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/Vistas/banerulp.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
+                .addGap(163, 163, 163)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(29, 29, 29)
-                                .addComponent(jTextCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5))
-                                .addGap(35, 35, 35)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jEstado)
-                                    .addComponent(jTextAño, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jBuscar_mat, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jSalir_materia, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(21, 34, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jNuevo)
-                        .addGap(18, 18, 18)
-                        .addComponent(jGuardar)
-                        .addGap(26, 26, 26)
-                        .addComponent(jModificar)
-                        .addGap(18, 18, 18)
-                        .addComponent(jEliminar)
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(223, 223, 223))
+                            .addComponent(jTextCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jEstado)
+                            .addComponent(jTextAño, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(22, 30, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jGuardar)
+                                    .addComponent(jNuevo)
+                                    .addComponent(jEliminar)
+                                    .addComponent(jSalir_materia)
+                                    .addComponent(jBuscar_mat))
+                                .addGap(10, 10, 10))
+                            .addComponent(jModificar, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addComponent(jLabelBaner, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBuscar_mat))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jEstado)
-                    .addComponent(jSalir_materia))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jNuevo)
-                    .addComponent(jGuardar)
-                    .addComponent(jModificar)
-                    .addComponent(jEliminar))
-                .addGap(26, 26, 26))
+                .addGap(39, 39, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jBuscar_mat)
+                            .addComponent(jTextCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jNuevo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jGuardar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextNombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jEliminar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSalir_materia)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(jTextAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jModificar))
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jEstado, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(40, 40, 40)))
+                .addComponent(jLabelBaner, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -276,6 +293,7 @@ public class Materia extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabelBaner;
     private javax.swing.JButton jModificar;
     private javax.swing.JButton jNuevo;
     private javax.swing.JButton jSalir_materia;
