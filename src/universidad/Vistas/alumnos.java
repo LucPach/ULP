@@ -359,9 +359,7 @@ public class alumnos extends javax.swing.JInternalFrame {
        int ID=Integer.parseInt(jLabelID.getText());
        
        Alumnos al1=new Alumnos(ID,dni,apellido,nombre,fecha,estado);
-       
-    
-       
+              
        ad.modificarAlumno(al1);
         
     }//GEN-LAST:event_jModificarActionPerformed
