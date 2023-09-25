@@ -53,6 +53,7 @@ public class alumnos extends javax.swing.JInternalFrame {
         jDate = new com.toedter.calendar.JDateChooser();
         jModificar = new javax.swing.JButton();
         jLabelID = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         jLabelBaner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/Vistas/banerulp.png"))); // NOI18N
         jLabelBaner.setText("jLabel7");
@@ -144,6 +145,9 @@ public class alumnos extends javax.swing.JInternalFrame {
 
         jLabelID.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
 
+        jLabel7.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel7.setText("ID");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -163,10 +167,10 @@ public class alumnos extends javax.swing.JInternalFrame {
                         .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jEstado)
-                                .addGap(36, 36, 36)
-                                .addComponent(jLabelID, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10))
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabelID, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28))
                             .addComponent(jTextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextDni, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -180,7 +184,9 @@ public class alumnos extends javax.swing.JInternalFrame {
             .addComponent(jLabelBaner, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addComponent(jLabel6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jEstado)
+                    .addComponent(jLabel6))
                 .addGap(18, 18, 18)
                 .addComponent(jDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -207,9 +213,7 @@ public class alumnos extends javax.swing.JInternalFrame {
                                 .addGap(29, 29, 29)
                                 .addComponent(jLabel4)
                                 .addGap(30, 30, 30)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jEstado)))
+                                .addComponent(jLabel5))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jNuevo)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -218,20 +222,26 @@ public class alumnos extends javax.swing.JInternalFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jModificar)
                                     .addComponent(jTextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jEliminar))
+                                        .addComponent(jEliminar)
+                                        .addGap(0, 0, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabelID, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabelID, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(jEstado)))))
                         .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel6)
                             .addComponent(jDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jSalir_alumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
-                .addComponent(jLabelBaner, javax.swing.GroupLayout.PREFERRED_SIZE, 119, Short.MAX_VALUE))
+                .addComponent(jLabelBaner, javax.swing.GroupLayout.PREFERRED_SIZE, 123, Short.MAX_VALUE))
         );
 
         pack();
@@ -287,7 +297,7 @@ public class alumnos extends javax.swing.JInternalFrame {
         jEstado.setSelected(al.isEstado());
         jDate.setDate(Date.valueOf(al.getFecha()));
        
-        jLabelID.setText("id: " + Integer.toString(al.getIdAlumno()));
+        jLabelID.setText("" + Integer.toString(al.getIdAlumno()));
         }
        
                
@@ -327,7 +337,7 @@ public class alumnos extends javax.swing.JInternalFrame {
         jTextNombre.setText("");
         jEstado.setSelected(false);  
         jDate.setDate(Date.valueOf(LocalDate.now()));
-        jLabelID.setText("id: ");
+        jLabelID.setText("");
         
        
         
@@ -369,6 +379,7 @@ public class alumnos extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabelBaner;
     private javax.swing.JLabel jLabelID;
     private javax.swing.JButton jModificar;

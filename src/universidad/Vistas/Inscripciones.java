@@ -186,11 +186,7 @@ public class Inscripciones extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_jComboAlumnosActionPerformed
     public void cargarCombo(ArrayList a){
-     foreach(ArrayList nuevalist:a){
-    
-    
-    
-    }
+   
     
     
     }
