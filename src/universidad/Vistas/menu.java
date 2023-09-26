@@ -69,8 +69,8 @@ public class menu extends javax.swing.JFrame {
         jMenuBar1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
 
         jMenu1.setBackground(new java.awt.Color(255, 153, 0));
-        jMenu1.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu1.setText("Alumno");
+        jMenu1.setForeground(new java.awt.Color(255, 153, 0));
+        jMenu1.setText("Alumno -");
         jMenu1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
 
         jFormAlumnos.setBackground(new java.awt.Color(255, 153, 0));
@@ -87,8 +87,8 @@ public class menu extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setBackground(new java.awt.Color(255, 153, 0));
-        jMenu2.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu2.setText("Materia");
+        jMenu2.setForeground(new java.awt.Color(255, 153, 0));
+        jMenu2.setText("Materia -");
         jMenu2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
 
         jFormMaterias.setBackground(new java.awt.Color(255, 153, 0));
@@ -105,8 +105,8 @@ public class menu extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu3.setBackground(new java.awt.Color(255, 153, 0));
-        jMenu3.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu3.setText("Administración");
+        jMenu3.setForeground(new java.awt.Color(255, 153, 0));
+        jMenu3.setText("Administración -");
         jMenu3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
 
         jFromInscripciones.setBackground(new java.awt.Color(255, 153, 0));
@@ -134,8 +134,8 @@ public class menu extends javax.swing.JFrame {
         jMenuBar1.add(jMenu3);
 
         jMenu4.setBackground(new java.awt.Color(255, 153, 0));
-        jMenu4.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu4.setText("Consultas");
+        jMenu4.setForeground(new java.awt.Color(255, 153, 0));
+        jMenu4.setText("Consultas -");
         jMenu4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
 
         jFormAlumxMat.setBackground(new java.awt.Color(255, 153, 0));
@@ -152,7 +152,7 @@ public class menu extends javax.swing.JFrame {
         jMenuBar1.add(jMenu4);
 
         jSalir_menuprincipal.setBackground(new java.awt.Color(255, 153, 0));
-        jSalir_menuprincipal.setForeground(new java.awt.Color(255, 255, 255));
+        jSalir_menuprincipal.setForeground(new java.awt.Color(255, 153, 0));
         jSalir_menuprincipal.setText("Salir");
         jSalir_menuprincipal.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jSalir_menuprincipal.addMouseListener(new java.awt.event.MouseAdapter() {
