@@ -1,22 +1,33 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package universidad.Acceso;
 
-package universidad.acceso;
-
-import java.sql.*;
-import java.util.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import universidad.Entidades.Alumnos;
 import universidad.Entidades.Inscripcion;
 import universidad.Entidades.Materias;
 
-
-
-public class InscripciónData {
-    private Connection con=null;
+/**
+ *
+ * @author Exon
+ */
+public class InscData {
+      private Connection con=null;
     private MateriaData md=new MateriaData();
     private AlumnoData ad=new AlumnoData();
     
     
-    public InscripciónData(){
+    public InscData(){
         this.con=Conexion.getConexion();
     }
     
@@ -193,3 +204,4 @@ public class InscripciónData {
             return alumnosMateria;
     }
 }
+

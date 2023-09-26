@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import universidad.Acceso.*;
 import universidad.Entidades.*;
-import universidad.acceso.InscripciónData;
+
 
 
 /**
@@ -21,7 +21,7 @@ public class Inscripciones extends javax.swing.JInternalFrame {
        private ArrayList<Alumnos>alist=new ArrayList<>();
        private AlumnoData aldat;
        private MateriaData mateData;
-       private InscripciónData inscData;
+       private InscData inscData;
        private DefaultTableModel tabla;
        
        
@@ -30,32 +30,41 @@ public class Inscripciones extends javax.swing.JInternalFrame {
         
         aldat=new AlumnoData();
         alist=(ArrayList<Alumnos>)aldat.listarAlumnos();
-     //    tabla=new DefaultTableModel();
-     //   inscData=new InscripciónData();
-     //   mateData=new MateriaData();
+        tabla=new DefaultTableModel();
+        inscData=new InscData();
+        mateData=new MateriaData();
         
         
         cargarCombo(alist);
-    //    armarCabecera();
+        armarCabecera();
+    }
+    private void cleanFilaTabla(){
+      int indice=tabla.getRowCount()-1;
+      
+      for (int i=indice;i>=0;i--){
+      
+      tabla.removeRow(i);
+      }
+        
     }
     
-//   private void armarCabecera(){
-//   
-//    ArrayList<Object> filacabecera=new ArrayList<>();
-//    filacabecera.add("ID");
-//    filacabecera.add("Nombre");
-//    filacabecera.add("Año");
-//    
-//    for(Object it:filacabecera){
-//    tabla.addColumn(it);
-//    
-//    
-//    }
-//    jTabla.setModel(tabla);
-//    
-//   
-//   
-//   }
+   private void armarCabecera(){
+   
+    ArrayList<Object> filacabecera=new ArrayList<>();
+    filacabecera.add("ID");
+    filacabecera.add("Nombre");
+    filacabecera.add("Año");
+    
+    for(Object it:filacabecera){
+    tabla.addColumn(it);
+    
+    
+    }
+    jTabla.setModel(tabla);
+    
+   
+   
+   }
     
 
     /**
