@@ -90,7 +90,7 @@ public class Alumnos {
 
     @Override
     public String toString() {
-        return   "-" + apellido + "," + nombre + "-" +dni+ " - " + fecha;
+        return   idAlumno +"-" + apellido + "," + nombre + "-" +dni ;
     }
     
     

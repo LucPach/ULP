@@ -144,7 +144,7 @@ public class InscData {
                 Materias materia=new Materias();
                 materia.setIdMateria(rs.getInt("idMateria"));
                 materia.setNombre(rs.getString("nombre"));
-                materia.setAnio(rs.getInt("anioMateria"));
+                materia.setAnio(rs.getInt("año"));
                 materias.add(materia);
             }
             ps.close();
@@ -157,7 +157,7 @@ public class InscData {
     public List<Materias> obtenerMateriasNOCursadas (int idAlumno){
         
         ArrayList<Materias> materias=new ArrayList<>();
-        
+       
             String sql= "SELECT * FROM materia WHERE estado = 1 AND idMateria NOT IN (SELECT idMateria FROM inscripcion WHERE idAlumno = ?)";
             try{
             PreparedStatement ps =con.prepareStatement(sql);
@@ -167,7 +167,7 @@ public class InscData {
                 Materias materia=new Materias();
                 materia.setIdMateria(rs.getInt("idMateria"));
                 materia.setNombre(rs.getString("nombre"));
-                materia.setAnio(rs.getInt("anioMateria"));
+                materia.setAnio(rs.getInt("año"));
                 materias.add(materia);
             }
             ps.close();
@@ -192,7 +192,7 @@ public class InscData {
                 Alumnos alumno = new Alumnos();
                 alumno.setIdAlumno(rs.getInt("idAlumno"));
                 alumno.setNombre(rs.getString("nombre"));
-                alumno.setFecha(rs.getDate("fechaNacimiento").toLocalDate());
+                alumno.setFecha(rs.getDate("fechaNac").toLocalDate());
                 alumno.setEstado(rs.getBoolean("estado"));
                 alumnosMateria.add(alumno);
             }
