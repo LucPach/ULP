@@ -5,6 +5,7 @@
  */
 package universidad.Vistas;
 
+import java.awt.event.KeyEvent;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -67,8 +68,18 @@ public class Materia extends javax.swing.JInternalFrame {
         jLabel5.setText("Estado");
 
         jTextCodigo.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jTextCodigo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextCodigoKeyTyped(evt);
+            }
+        });
 
         jTextNombre.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jTextNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextNombreKeyTyped(evt);
+            }
+        });
 
         jBuscar_mat.setBackground(new java.awt.Color(255, 153, 0));
         jBuscar_mat.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -118,6 +129,12 @@ public class Materia extends javax.swing.JInternalFrame {
         jSalir_materia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSalir_materiaActionPerformed(evt);
+            }
+        });
+
+        jTextAño.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextAñoKeyTyped(evt);
             }
         });
 
@@ -281,6 +298,32 @@ public class Materia extends javax.swing.JInternalFrame {
          
         
     }//GEN-LAST:event_jModificarActionPerformed
+
+    private void jTextCodigoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextCodigoKeyTyped
+       
+        if(Character.isLetter(evt.getKeyChar())){
+        evt.consume();
+        }
+        if(evt.getKeyChar()==KeyEvent.VK_SPACE){
+        evt.consume();
+    }
+    }//GEN-LAST:event_jTextCodigoKeyTyped
+
+    private void jTextAñoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextAñoKeyTyped
+        // TODO add your handling code here:
+        if(Character.isLetter(evt.getKeyChar())){
+        evt.consume();
+        }
+        if(evt.getKeyChar()==KeyEvent.VK_SPACE){
+        evt.consume();
+        }
+    }//GEN-LAST:event_jTextAñoKeyTyped
+
+    private void jTextNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextNombreKeyTyped
+        if(!(Character.isLetter(evt.getKeyChar())) && !(evt.getKeyChar()==KeyEvent.VK_SPACE)){
+        evt.consume();
+        }
+    }//GEN-LAST:event_jTextNombreKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

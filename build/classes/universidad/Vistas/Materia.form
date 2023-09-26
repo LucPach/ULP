@@ -162,6 +162,9 @@
           <Font name="Dialog" size="14" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextCodigoKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextNombre">
       <Properties>
@@ -169,6 +172,9 @@
           <Font name="Dialog" size="14" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextNombreKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jEstado">
     </Component>
@@ -259,6 +265,9 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextA&#xf1;o">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextA&#xf1;oKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jModificar">
       <Properties>

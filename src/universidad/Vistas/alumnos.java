@@ -5,6 +5,7 @@
  */
 package universidad.Vistas;
 
+import java.awt.event.KeyEvent;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -75,6 +76,24 @@ public class alumnos extends javax.swing.JInternalFrame {
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel6.setText("Fecha de nacimiento:");
+
+        jTextDni.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextDniKeyTyped(evt);
+            }
+        });
+
+        jTextApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextApellidoKeyTyped(evt);
+            }
+        });
+
+        jTextNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextNombreKeyTyped(evt);
+            }
+        });
 
         jBuscarALumno.setBackground(new java.awt.Color(255, 153, 0));
         jBuscarALumno.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -255,17 +274,26 @@ public class alumnos extends javax.swing.JInternalFrame {
     private void jGuardar_alumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jGuardar_alumnosActionPerformed
        //boton para guardar en base a los 3 campos de texto el alumno en la base de datos
        
+       try{
        int dni=Integer.parseInt(jTextDni.getText());
        String apellido=jTextApellido.getText();
        String nombre=jTextNombre.getText();
        boolean estado=jEstado.isSelected();
        LocalDate fecha=jDate.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
        
+      
+       
        Alumnos al1= new Alumnos(dni,apellido,nombre,fecha,estado);
        AlumnoData ad= new AlumnoData();
        
        ad.guardarAlumno(al1);
-      
+       }catch(NullPointerException d){
+       JOptionPane.showMessageDialog(null, "Faltan completar campos");
+       }catch(NumberFormatException f){
+       JOptionPane.showMessageDialog(null, "Verifique que cada campo este correcto");
+       
+       
+       }
        
        
        
@@ -363,6 +391,28 @@ public class alumnos extends javax.swing.JInternalFrame {
        ad.modificarAlumno(al1);
         
     }//GEN-LAST:event_jModificarActionPerformed
+
+    private void jTextDniKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextDniKeyTyped
+            
+        if(Character.isLetter(evt.getKeyChar())){
+        evt.consume();
+        }
+        if(evt.getKeyChar()==KeyEvent.VK_SPACE){
+        evt.consume();
+    }
+    }//GEN-LAST:event_jTextDniKeyTyped
+
+    private void jTextApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextApellidoKeyTyped
+        if(!(Character.isLetter(evt.getKeyChar())) && !(evt.getKeyChar()==KeyEvent.VK_SPACE)){
+        evt.consume();
+        }
+    }//GEN-LAST:event_jTextApellidoKeyTyped
+
+    private void jTextNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextNombreKeyTyped
+        if(!(Character.isLetter(evt.getKeyChar())) && !(evt.getKeyChar()==KeyEvent.VK_SPACE)){
+        evt.consume();
+        }
+    }//GEN-LAST:event_jTextNombreKeyTyped
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
