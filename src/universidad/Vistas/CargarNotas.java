@@ -5,19 +5,83 @@
  */
 package universidad.Vistas;
 
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import universidad.Acceso.AlumnoData;
+import universidad.Acceso.InscData;
+import universidad.Acceso.MateriaData;
+import universidad.Entidades.*;
 /**
  *
  * @author Exon
  */
 public class CargarNotas extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form CargarNotas
-     */
+       private ArrayList<Alumnos>alist=new ArrayList<>();
+       private ArrayList<Materias>mlist;
+      
+       private AlumnoData aldat;
+       private MateriaData mateData;
+       private InscData inscData;
+       private DefaultTableModel tabla;
+       
     public CargarNotas() {
         initComponents();
-    }
+        
+        aldat=new AlumnoData();
+        alist=(ArrayList<Alumnos>)aldat.listarAlumnos();
+        tabla=new DefaultTableModel();
+        inscData=new InscData();
+        mateData=new MateriaData();
+        mlist=(ArrayList<Materias>)mateData.listarMaterias();
 
+        
+        cargarCombo(alist);
+        armarCabecera();
+        
+        
+        
+    }
+    
+    private void armarCabecera(){
+   
+    ArrayList<Object> filacabecera=new ArrayList<>();
+    filacabecera.add("ID");
+    filacabecera.add("Nombre");
+    filacabecera.add("Nota");
+    
+    for(Object it:filacabecera){
+    tabla.addColumn(it);
+    
+    
+    }
+    jTabla.setModel(tabla);
+    
+   
+   
+   }
+    
+    
+ public void cargarCombo(ArrayList<Alumnos> a){
+    
+        for(Alumnos al:a){
+   
+        jCombo.addItem(al);
+    
+    
+    }
+ }
+ 
+  private void cleanFilaTabla(){
+      int indice=tabla.getRowCount()-1;
+      
+      for (int i=indice;i>=0;i--){
+      
+      tabla.removeRow(i);
+      }
+        
+    }
+ 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,9 +93,9 @@ public class CargarNotas extends javax.swing.JInternalFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jCombo = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTabla = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jSalir_carg_notas = new javax.swing.JButton();
         jLabelBaner = new javax.swing.JLabel();
@@ -44,9 +108,13 @@ public class CargarNotas extends javax.swing.JInternalFrame {
         jLabel2.setForeground(new java.awt.Color(255, 153, 0));
         jLabel2.setText("Selecciona un Alumno:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboActionPerformed(evt);
+            }
+        });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -57,7 +125,7 @@ public class CargarNotas extends javax.swing.JInternalFrame {
                 "Codigo", "Nombre", "Nota"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTabla);
 
         jButton1.setBackground(new java.awt.Color(255, 153, 0));
         jButton1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -90,7 +158,7 @@ public class CargarNotas extends javax.swing.JInternalFrame {
                         .addGap(31, 31, 31)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(21, 21, 21))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
@@ -112,7 +180,7 @@ public class CargarNotas extends javax.swing.JInternalFrame {
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -130,15 +198,39 @@ public class CargarNotas extends javax.swing.JInternalFrame {
        this.dispose();
     }//GEN-LAST:event_jSalir_carg_notasActionPerformed
 
+    private void jComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboActionPerformed
+       
+//        ArrayList<Inscripcion> inscripciones = new ArrayList<>();
+//        Alumnos alum = (Alumnos) jCombo.getSelectedItem();
+//        InscData ins = new InscData();
+//        Materias m=new Materias();
+//        
+//        inscripciones = (ArrayList<Inscripcion>) ins.obtenerInscripcionesPorAlumno(alum.getIdAlumno());
+//
+//        for(Inscripcion insc:inscripciones){
+//      if (alum.getIdAlumno() == insc.getIdAlumno()) {
+//                tabla.addRow(new Object[]{
+//                    insc.getIdMateria(),
+//                    insc.getMat().getNombre(),
+//                    insc.getNota()});
+//                
+//      }
+     
+    
+       
+        
+        
+    }//GEN-LAST:event_jComboActionPerformed
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<Alumnos> jCombo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelBaner;
     private javax.swing.JButton jSalir_carg_notas;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTabla;
     // End of variables declaration//GEN-END:variables
 }

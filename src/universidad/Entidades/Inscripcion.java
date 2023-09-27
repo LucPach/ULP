@@ -15,7 +15,8 @@ public class Inscripcion {
     private int nota;
     private int idAlumno;
     private int idMateria;
-
+    
+    
     public Inscripcion(int idInscripcion, int nota, int idAlumno, int idMateria) {
         this.idInscripcion = idInscripcion;
         this.nota = nota;
