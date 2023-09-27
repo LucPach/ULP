@@ -110,9 +110,11 @@ public class Inscripciones extends javax.swing.JInternalFrame {
         jLabelBaner = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 255));
         jLabel1.setText("Formulario de Inscripciones");
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 153, 0));
         jLabel2.setText("Selecciona un Alumno:");
 
         jComboAlumnos.addActionListener(new java.awt.event.ActionListener() {
@@ -122,12 +124,15 @@ public class Inscripciones extends javax.swing.JInternalFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 102, 255));
         jLabel3.setText("Listado de Materias");
 
         jMatInsc.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMatInsc.setForeground(new java.awt.Color(255, 153, 0));
         jMatInsc.setText("Materias Inscriptas");
 
         jBotNoInsc.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jBotNoInsc.setForeground(new java.awt.Color(255, 153, 0));
         jBotNoInsc.setText("Maternias no Inscriptas");
         jBotNoInsc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,9 +207,9 @@ public class Inscripciones extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(57, 57, 57)
+                            .addGap(43, 43, 43)
                             .addComponent(jMatInsc)
-                            .addGap(108, 108, 108)
+                            .addGap(122, 122, 122)
                             .addComponent(jBotNoInsc, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(12, 12, 12)

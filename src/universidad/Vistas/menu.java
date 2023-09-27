@@ -75,7 +75,7 @@ public class menu extends javax.swing.JFrame {
 
         jFormAlumnos.setBackground(new java.awt.Color(255, 153, 0));
         jFormAlumnos.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jFormAlumnos.setForeground(new java.awt.Color(255, 255, 255));
+        jFormAlumnos.setForeground(new java.awt.Color(255, 153, 0));
         jFormAlumnos.setText("Formulario de Alumno");
         jFormAlumnos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,7 +93,7 @@ public class menu extends javax.swing.JFrame {
 
         jFormMaterias.setBackground(new java.awt.Color(255, 153, 0));
         jFormMaterias.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jFormMaterias.setForeground(new java.awt.Color(255, 255, 255));
+        jFormMaterias.setForeground(new java.awt.Color(255, 153, 0));
         jFormMaterias.setText("Formulario de Materia");
         jFormMaterias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,7 +111,7 @@ public class menu extends javax.swing.JFrame {
 
         jFromInscripciones.setBackground(new java.awt.Color(255, 153, 0));
         jFromInscripciones.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jFromInscripciones.setForeground(new java.awt.Color(255, 255, 255));
+        jFromInscripciones.setForeground(new java.awt.Color(255, 153, 0));
         jFromInscripciones.setText("Manejo de Inscripciones");
         jFromInscripciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,7 +122,7 @@ public class menu extends javax.swing.JFrame {
 
         jFormNotas.setBackground(new java.awt.Color(255, 153, 0));
         jFormNotas.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jFormNotas.setForeground(new java.awt.Color(255, 255, 255));
+        jFormNotas.setForeground(new java.awt.Color(255, 153, 0));
         jFormNotas.setText("Manipulación de Notas");
         jFormNotas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,7 +140,7 @@ public class menu extends javax.swing.JFrame {
 
         jFormAlumxMat.setBackground(new java.awt.Color(255, 153, 0));
         jFormAlumxMat.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jFormAlumxMat.setForeground(new java.awt.Color(255, 255, 255));
+        jFormAlumxMat.setForeground(new java.awt.Color(255, 153, 0));
         jFormAlumxMat.setText("Alumnos por Materia");
         jFormAlumxMat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
