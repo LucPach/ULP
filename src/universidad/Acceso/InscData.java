@@ -51,7 +51,7 @@ public class InscData {
     }
     
     public void actualizarNota(int idAlumno, int idMateria, double nota){
-        
+       
         String sql= "UPDATE inscripcion SET nota = ? WHERE idAlumno = ? and idMateria = ?";
         try {
             PreparedStatement ps=con.prepareStatement(sql);
@@ -61,11 +61,12 @@ public class InscData {
             
             int fila=ps.executeUpdate();
             if(fila>0){
-                JOptionPane.showConfirmDialog(null, "Nota Actualizada!");
+                JOptionPane.showMessageDialog(null, "Nota Actualizada!");
+              
             }
             
                 } catch (SQLException ex) {
-                JOptionPane.showConfirmDialog(null, "Error al acceder a la table de inscripción");
+                JOptionPane.showMessageDialog(null, "Error al acceder a la tabla de inscripción");
                 }
     }
     
@@ -122,8 +123,8 @@ public class InscData {
         insc.setIdInscripcion(rs.getInt("idInscripto"));
         Alumnos alu=ad.buscarAlumno(rs.getInt("idAlumno"));
         Materias mat=md.buscarMateria(rs.getInt("idMateria"));
-        insc.setIdAlumno(alu);
-        insc.setIdMateria(mat);
+        insc.setIdAlumno(alu.getIdAlumno());
+        insc.setIdMateria(mat.getIdMateria());
         insc.setNota(rs.getInt("nota"));
         cursada.add(insc);
         }

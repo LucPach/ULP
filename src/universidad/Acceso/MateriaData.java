@@ -82,6 +82,45 @@ public class MateriaData {
         
         
     }
+  
+    
+    
+    public String buscarNombreMateria(int id){
+        
+        String sql= "SELECT nombre,año,estado FROM materia WHERE idMateria=?";
+        Materias materia= null;
+        try {
+            try (PreparedStatement ps = con.prepareStatement(sql)) {
+                ps.setInt(1, id);
+                ResultSet rs = ps.executeQuery();
+                if (rs.next()){
+                    materia= new Materias();
+                    materia.setIdMateria(id);
+                    materia.setNombre(rs.getString("nombre"));
+                    materia.setAnio(rs.getInt("año"));
+                    int a=rs.getInt("estado");
+                    if(a==1){
+                    materia.setEstado(true);
+                    }else if(a==0){materia.setEstado(false);}
+                    
+                }else {JOptionPane.showMessageDialog(null,"No Existe la materia");
+                
+                }
+            }
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Error al acceder a la tabla materia");
+        }
+        return materia.getNombre();
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     
     public Materias buscarMateria(int id){
         

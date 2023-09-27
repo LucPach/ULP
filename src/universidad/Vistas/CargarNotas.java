@@ -6,6 +6,7 @@
 package universidad.Vistas;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import universidad.Acceso.AlumnoData;
 import universidad.Acceso.InscData;
@@ -96,7 +97,7 @@ public class CargarNotas extends javax.swing.JInternalFrame {
         jCombo = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTabla = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        jModificar = new javax.swing.JButton();
         jSalir_carg_notas = new javax.swing.JButton();
         jLabelBaner = new javax.swing.JLabel();
 
@@ -127,10 +128,15 @@ public class CargarNotas extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(jTabla);
 
-        jButton1.setBackground(new java.awt.Color(255, 153, 0));
-        jButton1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Guardar");
+        jModificar.setBackground(new java.awt.Color(255, 153, 0));
+        jModificar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jModificar.setForeground(new java.awt.Color(255, 255, 255));
+        jModificar.setText("Modificar");
+        jModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jModificarActionPerformed(evt);
+            }
+        });
 
         jSalir_carg_notas.setBackground(new java.awt.Color(255, 153, 0));
         jSalir_carg_notas.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -163,9 +169,9 @@ public class CargarNotas extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jModificar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jSalir_carg_notas, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(9, 9, 9))
@@ -185,7 +191,7 @@ public class CargarNotas extends javax.swing.JInternalFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSalir_carg_notas, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabelBaner, javax.swing.GroupLayout.PREFERRED_SIZE, 106, Short.MAX_VALUE))
@@ -199,36 +205,70 @@ public class CargarNotas extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jSalir_carg_notasActionPerformed
 
     private void jComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboActionPerformed
-       
-//        ArrayList<Inscripcion> inscripciones = new ArrayList<>();
-//        Alumnos alum = (Alumnos) jCombo.getSelectedItem();
-//        InscData ins = new InscData();
-//        Materias m=new Materias();
-//        
-//        inscripciones = (ArrayList<Inscripcion>) ins.obtenerInscripcionesPorAlumno(alum.getIdAlumno());
-//
-//        for(Inscripcion insc:inscripciones){
-//      if (alum.getIdAlumno() == insc.getIdAlumno()) {
-//                tabla.addRow(new Object[]{
-//                    insc.getIdMateria(),
-//                    insc.getMat().getNombre(),
-//                    insc.getNota()});
-//                
-//      }
+      
      
-    
+        actualizar();
        
         
         
     }//GEN-LAST:event_jComboActionPerformed
+
+    
+    private void actualizar(){
+    
+     cleanFilaTabla();
+       ArrayList<Inscripcion> inscripciones = new ArrayList<>();
+        Alumnos alum = (Alumnos) jCombo.getSelectedItem();
+        InscData ins = new InscData();
+        Materias m=new Materias();
+        MateriaData mat=new MateriaData();
+        
+        
+        inscripciones = (ArrayList<Inscripcion>) ins.obtenerInscripcionesPorAlumno(alum.getIdAlumno());
+
+        for(Inscripcion insc:inscripciones){
+      if (alum.getIdAlumno() == insc.getIdAlumno()) {
+           tabla.addRow(new Object[]{
+                    insc.getIdMateria(),
+                    mat.buscarNombreMateria(insc.getIdMateria()), //metodo nuevo buscar por id la materia y devuelve el string de su nombre
+                   insc.getNota()});
+     
+               
+      }}}
+    
+    
+    
+    
+    
+    private void jModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jModificarActionPerformed
+        
+        InscData insc=new InscData();
+        Alumnos alum = (Alumnos) jCombo.getSelectedItem();
+        
+        //actualizarNota(int idAlumno, int idMateria, double nota)
+       // tabla.isCellEditable(WIDTH, WIDTH)
+        int filaselect=jTabla.getSelectedRow();
+        if(filaselect!=-1){
+          double nota=Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese la nueva nota")); 
+            System.out.println("entrando");
+           
+        Object miObjeto = tabla.getValueAt(filaselect,0);  //crear objeto vacio , darle valor
+        int miEntero = (Integer) miObjeto;
+          
+        
+           insc.actualizarNota(alum.getIdAlumno(),miEntero, nota);
+           actualizar();
+         
+        }
+    }//GEN-LAST:event_jModificarActionPerformed
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<Alumnos> jCombo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelBaner;
+    private javax.swing.JButton jModificar;
     private javax.swing.JButton jSalir_carg_notas;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTabla;
