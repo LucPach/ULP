@@ -306,18 +306,27 @@ public class Inscripciones extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jRadioSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioSiActionPerformed
-      cargaDatosInscriptos();
-      jButton2.setEnabled(true);
+      
+        if (jRadioSi.isSelected()==true){
+     cargaDatosInscriptos();
+     jButton2.setEnabled(true);
       jBInscribir.setEnabled(false);
+    
+        }else{
+            cleanFilaTabla();
+        }
       
       jRadioNo.setSelected(false);
     }//GEN-LAST:event_jRadioSiActionPerformed
 
     private void jRadioNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioNoActionPerformed
+        if (jRadioNo.isSelected()==true){
         cargaDatosNoInscriptos();
       jButton2.setEnabled(false);
       jBInscribir.setEnabled(true);
-      
+        }else{
+            cleanFilaTabla();
+        }
       jRadioSi.setSelected(false);
     }//GEN-LAST:event_jRadioNoActionPerformed
     
