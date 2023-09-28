@@ -110,6 +110,7 @@ public class Inscripciones extends javax.swing.JInternalFrame {
         jRadioNo = new javax.swing.JRadioButton();
 
         setBackground(new java.awt.Color(0, 65, 121));
+        setForeground(java.awt.Color.blue);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 153, 0));
