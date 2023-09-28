@@ -109,9 +109,12 @@ public class Inscripciones extends javax.swing.JInternalFrame {
         jRadioSi = new javax.swing.JRadioButton();
         jRadioNo = new javax.swing.JRadioButton();
 
+        setBackground(new java.awt.Color(0, 65, 121));
+
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 102, 255));
-        jLabel1.setText("Formulario de Inscripciones");
+        jLabel1.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/Vistas/banerulp2.png"))); // NOI18N
+        jLabel1.setText("         Formulario de Inscripciones");
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 153, 0));
@@ -124,7 +127,7 @@ public class Inscripciones extends javax.swing.JInternalFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 102, 255));
+        jLabel3.setForeground(new java.awt.Color(255, 153, 0));
         jLabel3.setText("Listado de Materias");
 
         jTabla.setModel(new javax.swing.table.DefaultTableModel(
@@ -177,6 +180,8 @@ public class Inscripciones extends javax.swing.JInternalFrame {
 
         jLabelBaner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/Vistas/banerulp.png"))); // NOI18N
 
+        jRadioSi.setBackground(new java.awt.Color(0, 65, 121));
+        jRadioSi.setForeground(new java.awt.Color(255, 153, 0));
         jRadioSi.setText("Materias Inscriptas");
         jRadioSi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,6 +189,8 @@ public class Inscripciones extends javax.swing.JInternalFrame {
             }
         });
 
+        jRadioNo.setBackground(new java.awt.Color(0, 65, 121));
+        jRadioNo.setForeground(new java.awt.Color(255, 153, 0));
         jRadioNo.setText("Materias no Inscriptas");
         jRadioNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -195,52 +202,52 @@ public class Inscripciones extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabelBaner, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(96, 96, 96))
+            .addComponent(jLabelBaner, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(6, 6, 6)
                 .addComponent(jScrollPane1)
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(12, 12, 12)
-                            .addComponent(jBInscribir)
-                            .addGap(77, 77, 77)
-                            .addComponent(jButton2)
-                            .addGap(81, 81, 81)
-                            .addComponent(jSalir_insc))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(187, 187, 187)
-                            .addComponent(jLabel3)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jComboAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(20, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(jRadioSi)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jRadioNo)
                 .addGap(47, 47, 47))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(12, 12, 12)
+                            .addComponent(jBInscribir)
+                            .addGap(108, 108, 108)
+                            .addComponent(jButton2)
+                            .addGap(98, 98, 98)
+                            .addComponent(jSalir_insc))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(20, 20, 20)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(29, 29, 29)
+                            .addComponent(jComboAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(206, 206, 206)
+                        .addComponent(jLabel3)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(42, 42, 42)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jComboAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
+                .addGap(32, 32, 32)
                 .addComponent(jLabel3)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRadioSi)
                     .addComponent(jRadioNo))
@@ -252,7 +259,7 @@ public class Inscripciones extends javax.swing.JInternalFrame {
                     .addComponent(jButton2)
                     .addComponent(jSalir_insc))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelBaner, javax.swing.GroupLayout.PREFERRED_SIZE, 112, Short.MAX_VALUE))
+                .addComponent(jLabelBaner, javax.swing.GroupLayout.PREFERRED_SIZE, 116, Short.MAX_VALUE))
         );
 
         pack();
