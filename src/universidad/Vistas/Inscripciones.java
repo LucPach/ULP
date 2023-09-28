@@ -283,7 +283,7 @@ public class Inscripciones extends javax.swing.JInternalFrame {
             
             Inscripcion i = new Inscripcion(0,a.getIdAlumno(),m.getIdMateria());        
             inscData.guardarInscripción(i);
-            cleanFilaTabla();
+            cargaDatosNoInscriptos();
         }        
     }//GEN-LAST:event_jBInscribirActionPerformed
 
@@ -293,7 +293,7 @@ public class Inscripciones extends javax.swing.JInternalFrame {
             Alumnos a=(Alumnos)jComboAlumnos.getSelectedItem();
             int idMateria=(Integer)tabla.getValueAt(filaSeleccionada,0);
             inscData.borrarInscripcion(a.getIdAlumno(), idMateria);
-            cleanFilaTabla();
+            cargaDatosInscriptos();
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 

@@ -185,7 +185,7 @@ public class InscData {
                         "FROM inscripcion i,alumno a WHERE i.idAlumno = a.idAlumno and idMateria = ? AND a.estado = 1";
             
         try {
-            PreparedStatement ps=con.prepareCall(sql);
+            PreparedStatement ps=con.prepareStatement(sql);
             ps.setInt(1, idMateria);
             
             ResultSet rs=ps.executeQuery();
@@ -193,8 +193,9 @@ public class InscData {
                 Alumnos alumno = new Alumnos();
                 alumno.setIdAlumno(rs.getInt("idAlumno"));
                 alumno.setNombre(rs.getString("nombre"));
-                alumno.setFecha(rs.getDate("fechaNac").toLocalDate());
+                alumno.setApellido(rs.getString("apellido"));
                 alumno.setEstado(rs.getBoolean("estado"));
+                alumno.setDni(rs.getInt("dni"));
                 alumnosMateria.add(alumno);
             }
             
