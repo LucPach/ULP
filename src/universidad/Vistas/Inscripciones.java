@@ -301,12 +301,16 @@ public class Inscripciones extends javax.swing.JInternalFrame {
       cargaDatosInscriptos();
       jButton2.setEnabled(true);
       jBInscribir.setEnabled(false);
+      
+      jRadioNo.setSelected(false);
     }//GEN-LAST:event_jRadioSiActionPerformed
 
     private void jRadioNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioNoActionPerformed
         cargaDatosNoInscriptos();
       jButton2.setEnabled(false);
       jBInscribir.setEnabled(true);
+      
+      jRadioSi.setSelected(false);
     }//GEN-LAST:event_jRadioNoActionPerformed
     
     

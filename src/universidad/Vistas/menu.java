@@ -39,6 +39,7 @@ public class menu extends javax.swing.JFrame {
         jFormNotas = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jFormAlumxMat = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jSalir_menuprincipal = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -51,9 +52,7 @@ public class menu extends javax.swing.JFrame {
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(escritorioLayout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jLabel1)
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,6 +148,17 @@ public class menu extends javax.swing.JFrame {
         });
         jMenu4.add(jFormAlumxMat);
 
+        jMenuItem1.setBackground(new java.awt.Color(255, 153, 0));
+        jMenuItem1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMenuItem1.setForeground(new java.awt.Color(255, 153, 0));
+        jMenuItem1.setText("Ver Alumnos Inscriptos");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem1);
+
         jMenuBar1.add(jMenu4);
 
         jSalir_menuprincipal.setBackground(new java.awt.Color(255, 153, 0));
@@ -232,6 +242,18 @@ public class menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jSalir_menuprincipalMouseClicked
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+       
+        escritorio.removeAll();
+        escritorio.repaint();
+        VerAlumnos va= new VerAlumnos();
+        va.setVisible(true);
+        escritorio.add(va);
+        escritorio.moveToFront(va);
+        
+        
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -278,6 +300,7 @@ public static void NimbusLookAndFeel() {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenu jSalir_menuprincipal;
     // End of variables declaration//GEN-END:variables
 }

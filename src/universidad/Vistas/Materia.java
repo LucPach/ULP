@@ -243,15 +243,24 @@ public class Materia extends javax.swing.JInternalFrame {
     private void jGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jGuardarActionPerformed
 
         
-        String nombre=jTextNombre.getText();
+       String nombre=jTextNombre.getText();
        int fecha=Integer.parseInt(jTextAño.getText());
        boolean estado=jEstado.isSelected();
         
         Materias mat=new Materias(nombre,fecha,estado);
         MateriaData md=new MateriaData();
         
-     
         md.guardarMateria(mat);
+        
+        Materias mat2= md.buscarMateria(mat.getIdMateria());
+        
+                
+        if((mat.getNombre().equalsIgnoreCase(mat2.getNombre())) && (mat.getAnio()==mat2.getAnio())){
+        md.eliminarMateria(mat.getIdMateria());
+            JOptionPane.showMessageDialog(null, "La materia se ha eliminado porque ya existia");
+        
+        }
+        
               
         
         
