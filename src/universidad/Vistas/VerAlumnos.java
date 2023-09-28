@@ -53,7 +53,6 @@ public class VerAlumnos extends javax.swing.JInternalFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/Vistas/banerulp.png"))); // NOI18N
         jLabel2.setText("jLabel2");
 
-        jTabla.setBackground(new java.awt.Color(255, 153, 51));
         jTabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
