@@ -370,7 +370,7 @@ public class alumnos extends javax.swing.JInternalFrame {
         jTextApellido.setText("");
         jTextNombre.setText("");
         jEstado.setSelected(false);  
-        jDate.setDate(Date.valueOf(LocalDate.now()));
+        jDate.setDate(null);
         jLabelID.setText("");
         
        
